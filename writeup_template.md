@@ -15,9 +15,9 @@ The goals / steps of this project are the following:
 
 [image1]: ./CarND-T1-P3.jpg "Architecture Diagram"
 [image2]: ./writeup_data/IMG/center_2017_09_05_20_29_53_963.jpg "Center Driving"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
+[image3]: ./writeup_data/IMG/center_2017_09_05_22_15_58_509.jpg "Recovery Image"
+[image4]: ./writeup_data/IMG/center_2017_09_05_22_16_16_554.jpg "Recovery Image"
+[image5]: ./writeup_data/IMG/center_2017_09_05_22_16_17_187.jpg "Recovery Image"
 [image6]: ./examples/placeholder_small.png "Normal Image"
 [image7]: ./examples/placeholder_small.png "Flipped Image"
 
@@ -60,6 +60,8 @@ As stated previously, the model contains two dropout layers in order to reduce o
 The model was trained and validated on different data sets (80/20) to ensure that the model was not overfitting (code line 123 validation_split=0.2). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 Another way to generalize and avoid overfitting was to introduce random lighting by defining the `loadAndProcess` function (lines 20 to 27) which was applied for all training and validation images (left/center/right, lines 62/63/64)
+
+There were also alot of datapoints with 0 (actually <0.2) angles which would count to more than half of the dataset so I decided to randomly remove about 50% of these points.
 
 ####3. Model parameter tuning
 
@@ -118,23 +120,15 @@ Here is an example image of center lane driving:
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to apply higher angles to move back to the center of the lane. These images show what a recovery looks like starting from very close to the left side until back to center of the lane :
 
 ![alt text][image3]
 ![alt text][image4]
 ![alt text][image5]
 
-Then I repeated this process on track two in order to get more data points.
+Then I repeated this process locations where the car would go offtrack.
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
+After the collection process, I had 41307 number of data points. I then preprocessed this data by removing half of the <0.2 angles, thus removing about 6605 samples.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 

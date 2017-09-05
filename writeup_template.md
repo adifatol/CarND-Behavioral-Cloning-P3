@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
+[image1]: ./CarND-T1-P3.jpg "Architecture Diagram"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -94,9 +94,22 @@ After this, the whole system was working together: record training data, process
 
 ####2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture consisted of a convolution neural network with the following layers and layer sizes:
+Lambda        - output 80x80x3, data normalization
+Convolution2D - output 20x20x16
+ELU           - output 20x20x16, exponential activation
+Convolution2D - output 10x10x32
+ELU           - output 10x10x32, exponential activation
+Convolution2D - output 5x5x64
+Flatten       - output 1600
+Dropout       - output 1600
+ELU           - output 1600, exponential activation
+Dense         - output 512
+Dropout       - output 512
+ELU           - output 512, exponential activation
+Dense         - output 1
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+Here is a visualization of the architecture
 
 ![alt text][image1]
 

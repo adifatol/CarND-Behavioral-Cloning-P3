@@ -1,9 +1,4 @@
-#**Behavioral Cloning** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
+# **Behavioral Cloning** 
 ---
 
 **Behavioral Cloning Project**
@@ -19,7 +14,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./CarND-T1-P3.jpg "Architecture Diagram"
-[image2]: ./writeup_data/center_2017_09_05_20_29_53_963.jpg "Center Driving"
+[image2]: ./writeup_data/IMG/center_2017_09_05_20_29_53_963.jpg "Center Driving"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
 [image5]: ./examples/placeholder_small.png "Recovery Image"
@@ -30,7 +25,7 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
 ####1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
@@ -52,7 +47,7 @@ python drive.py model.h5
 The nw.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 The drive.py file was modify to run the predictions agains processed images (crop & resize, as in section 4).
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
 ####1. An appropriate model architecture has been employed
 
@@ -77,7 +72,7 @@ I used a combination of center lane driving, recovering from the left and right 
 
 For details about how I created the training data, see the next section. 
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
 ####1. Solution Design Approach
 

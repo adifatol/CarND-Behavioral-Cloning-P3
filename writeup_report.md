@@ -33,7 +33,7 @@ My project includes the following files:
 * nw.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network 
-* writeup_report.pdf summarizing the results
+* writeup_report.md summarizing the results
 * process.sh containig commands to process the training images
 
 ####2. Submission includes functional code

@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./CarND-T1-P3.jpg "Architecture Diagram"
-[image2]: ./examples/placeholder.png "Grayscaling"
+[image2]: ./writeup_data/center_2017_09_05_20_29_53_963.jpg "Center Driving"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
 [image5]: ./examples/placeholder_small.png "Recovery Image"
@@ -95,19 +95,19 @@ After this, the whole system was working together: record training data, process
 ####2. Final Model Architecture
 
 The final model architecture consisted of a convolution neural network with the following layers and layer sizes:
-Lambda        - output 80x80x3, data normalization
-Convolution2D - output 20x20x16
-ELU           - output 20x20x16, exponential activation
-Convolution2D - output 10x10x32
-ELU           - output 10x10x32, exponential activation
-Convolution2D - output 5x5x64
-Flatten       - output 1600
-Dropout       - output 1600
-ELU           - output 1600, exponential activation
-Dense         - output 512
-Dropout       - output 512
-ELU           - output 512, exponential activation
-Dense         - output 1
+* Lambda        - output 80x80x3, data normalization
+* Convolution2D - output 20x20x16
+* ELU           - output 20x20x16, exponential activation
+* Convolution2D - output 10x10x32
+* ELU           - output 10x10x32, exponential activation
+* Convolution2D - output 5x5x64
+* Flatten       - output 1600
+* Dropout       - output 1600
+* ELU           - output 1600, exponential activation
+* Dense         - output 512
+* Dropout       - output 512
+* ELU           - output 512, exponential activation
+* Dense         - output 1
 
 Here is a visualization of the architecture
 
@@ -115,7 +115,11 @@ Here is a visualization of the architecture
 
 ####3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I first recorded one lap on track one using center lane driving. I used the mouse and tried to turn as smoothly as possible (tried the keyboard but the results were very bad).
+
+After that I recorded another lap on the other way around and merged the two datasets.
+
+Here is an example image of center lane driving:
 
 ![alt text][image2]
 
@@ -137,6 +141,7 @@ Etc ....
 After the collection process, I had X number of data points. I then preprocessed this data by ...
 
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2 as evidenced by training vs validation loss. 
+I used an adam optimizer so that manually training the learning rate wasn't necessary.
